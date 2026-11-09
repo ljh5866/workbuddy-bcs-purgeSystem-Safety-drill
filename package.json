@@ -1,0 +1,43 @@
+{
+  "name": "workbuddy-bcs-purgesystem-safety-drill",
+  "version": "1.5.0",
+  "description": "WorkBuddy 安全运营规范与演练插件集：常驻输出基线 + 四本按需手册，附装载器与体检工具。",
+  "type": "module",
+  "bin": {
+    "wbs-install": "tools/install.mjs",
+    "wbs-doctor": "tools/doctor.mjs",
+    "wbs-selftest": "tools/selftest.mjs"
+  },
+  "files": [
+    "plugins",
+    ".codebuddy-plugin",
+    "docs",
+    "tools",
+    "README.md",
+    "NOTICE",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node tools/selftest.mjs",
+    "doctor": "node tools/doctor.mjs",
+    "install:user": "node tools/install.mjs --user"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "ljh5866"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ljh5866/workbuddy-bcs-purgeSystem-Safety-drill.git"
+  },
+  "keywords": [
+    "workbuddy",
+    "codebuddy",
+    "plugin",
+    "rules",
+    "skill"
+  ]
+}
