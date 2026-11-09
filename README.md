@@ -12,6 +12,34 @@ WorkBuddy 的安全运营规范与演练插件集。两个插件，共一套文�
 两者的常驻层互斥，装一个就行；skill 可以叠加——`authorized-drill` 管授权受理与阶段推进，
 `drill-playbook` 管报告骨架，`output-sanitize` 管占位符，`delivery-playbook` 管标准链。
 
+## 新用户三步
+
+```bash
+git clone --depth 1 https://github.com/ljh5866/workbuddy-bcs-purgeSystem-Safety-drill.git
+cd workbuddy-bcs-purgeSystem-Safety-drill
+node tools/install.mjs --user     # 写规则与技能到 ~/.codebuddy
+node tools/doctor.mjs             # 体检：路径、体积、frontmatter
+```
+
+不克隆也能装：
+
+```bash
+npx -y github:ljh5866/workbuddy-bcs-purgeSystem-Safety-drill wbs-install --user
+```
+
+没装 Node 就用零依赖装法：把下面 5 个文本文件复制到位即可，内容都是纯 markdown。
+
+| 源文件 | 目标 |
+| --- | --- |
+| `plugins/workbuddy-secops-guardrails/rules/guardrails.md` | `~/.codebuddy/rules/workbuddy-secops-guardrails.md` |
+| `plugins/workbuddy-secops-guardrails/skills/authorized-drill/SKILL.md` | `~/.codebuddy/skills/authorized-drill/SKILL.md` |
+| `plugins/workbuddy-secops-guardrails/skills/output-sanitize/SKILL.md` | `~/.codebuddy/skills/output-sanitize/SKILL.md` |
+| `plugins/workbuddy-bcs-purgeSystem-Safety-drill/skills/drill-playbook/SKILL.md` | `~/.codebuddy/skills/drill-playbook/SKILL.md` |
+| `plugins/workbuddy-bcs-purgeSystem-Safety-drill/skills/delivery-playbook/SKILL.md` | `~/.codebuddy/skills/delivery-playbook/SKILL.md` |
+
+装完关掉 WorkBuddy 重开、新开会话才生效——规则只在会话开始时注入。
+macOS / Linux 的配置根同为 `~/.codebuddy`（Windows 版 5.9.3 已实测，其余平台按同族约定）。
+
 ## 装法
 
 WorkBuddy 5.9.3 的实际装载约定（从宿主 app.asar 里核对出来的，不是猜的）：
