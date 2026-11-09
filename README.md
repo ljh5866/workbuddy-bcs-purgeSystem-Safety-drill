@@ -14,22 +14,36 @@ WorkBuddy 的安全运营规范与演练插件集。两个插件，共一套文�
 
 ## 装法
 
-市场安装：
+WorkBuddy 5.9.3 的实际装载约定（从宿主 app.asar 里核对出来的，不是猜的）：
+
+| 通道 | 路径 | 上限 | 作用域 |
+| --- | --- | --- | --- |
+| 项目上下文 | `<cwd>/CODEBUDDY.md`、`<cwd>/.codebuddy/CODEBUDDY.md`、`<cwd>/AGENTS.md` | 8 000 字符，超出截断 | 项目 |
+| 规则 | `<cwd>/.codebuddy/rules/**/*.md`、`~/.codebuddy/rules/**/*.md` | 40 000 字符 / 文件 | 项目 + 用户 |
+| 技能 | `<cwd>/.codebuddy/skills/<name>/SKILL.md`、`~/.codebuddy/skills/<name>/SKILL.md` | — | 项目 + 用户 |
+| agent | `<cwd>/.codebuddy/agents/*.md`、`~/.codebuddy/agents/*.md` | — | 项目 + 用户 |
+| 插件市场 | `settings.json` 的 `extraKnownMarketplaces` + `enabledPlugins`，或 `plugins/known_marketplaces.json` | — | 用户 |
+
+用户级**不读** `CODEBUDDY.md`——那个文件名只在项目根生效，且按字符截断到 8 000。
+用户级的常驻内容要走 `~/.codebuddy/rules/`。
+
+一条命令装：
+
+```bash
+node tools/install.mjs --user                    # 用户级，规则 + 技能
+node tools/install.mjs --user --plugin workbuddy-secops-guardrails
+node tools/install.mjs --project D:\my-repo      # 项目级，写到 <dir>/.codebuddy
+node tools/install.mjs --user --dry-run          # 只看计划
+node tools/install.mjs --user --uninstall        # 卸掉
+```
+
+市场安装（GUI）：
 
 1. WorkBuddy → 插件 → 市场 → 添加本地目录 → 选本仓库根目录
 2. 装 `workbuddy-secops-guardrails`（推荐）或 `workbuddy-bcs-purgeSystem-Safety-drill`
 3. 新开会话生效
 
-手动安装：
-
-```bash
-mkdir -p ~/.codebuddy
-cat plugins/workbuddy-secops-guardrails/rules/guardrails.md >> ~/.codebuddy/CODEBUDDY.md
-
-mkdir -p ~/.codebuddy/skills/{authorized-drill,output-sanitize}
-cp plugins/workbuddy-secops-guardrails/skills/authorized-drill/SKILL.md  ~/.codebuddy/skills/authorized-drill/
-cp plugins/workbuddy-secops-guardrails/skills/output-sanitize/SKILL.md    ~/.codebuddy/skills/output-sanitize/
-```
+两套常驻 rules 会**同时加载**，只装一套；技能按需加载，可以全装。
 
 ## 文档
 
