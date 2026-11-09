@@ -1,0 +1,16 @@
+workbuddy-bcs-purgeSystem-Safety-drill
+Copyright 2026 ljh5866
+
+本项目的分层方式（常驻规范 + 按需手册 + 体积与特征自查）参考下列项目，
+演练手册的六阶段表与报告骨架、交付手册的「请求用语 → 标准链」对照表
+由这些项目的预设文本改写而来，依 Apache License 2.0 分发：
+
+  dsh-purge        Copyright 2026 YuJunZhiXue
+                   https://github.com/YuJunZhiXue/dsh-purge
+
+  dsh-purge-ports  Copyright 2026 shenwei322
+                   https://github.com/shenwei322/dsh-purge-ports
+
+改写部分：六阶段表、证据命名、报告骨架、任务类型对照表、参数槽、产物要求；
+其余（输出规范正文、质量检查、自查工具）为独立撰写。
+Apache-2.0 全文见本仓库 LICENSE。

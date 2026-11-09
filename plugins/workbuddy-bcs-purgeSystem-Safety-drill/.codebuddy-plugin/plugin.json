@@ -1,0 +1,20 @@
+{
+  "name": "workbuddy-bcs-purgeSystem-Safety-drill",
+  "version": "1.0.0",
+  "description": "WorkBuddy 演练插件：常驻输出规范 + 六阶段演练手册 + 交付手册。Drill guide plugin for WorkBuddy.",
+  "agentName": "workbuddy-bcs-purgeSystem-Safety-drill",
+  "author": {
+    "name": "ljh5866"
+  },
+  "repository": "https://github.com/ljh5866/workbuddy-bcs-purgeSystem-Safety-drill",
+  "license": "Apache-2.0",
+  "keywords": [
+    "workbuddy",
+    "codebuddy",
+    "rules",
+    "skill",
+    "drill"
+  ],
+  "rules": "rules",
+  "skills": "skills"
+}

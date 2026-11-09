@@ -1,0 +1,26 @@
+{
+  "name": "workbuddy-bcs-purgeSystem-Safety-drill",
+  "owner": {
+    "name": "ljh5866"
+  },
+  "description": "WorkBuddy 插件市场：演练插件（输出规范 + 演练手册 + 交付手册）。",
+  "plugins": [
+    {
+      "name": "workbuddy-bcs-purgeSystem-Safety-drill",
+      "source": "./plugins/workbuddy-bcs-purgeSystem-Safety-drill",
+      "description": "常驻输出规范（形态、档位、占位符、质量检查）+ 六阶段演练手册（证据纪律、报告骨架）+ 交付手册（任务类型到标准链）。",
+      "version": "1.0.0",
+      "author": {
+        "name": "ljh5866"
+      },
+      "license": "Apache-2.0",
+      "keywords": [
+        "workbuddy",
+        "rules",
+        "skill",
+        "drill"
+      ],
+      "category": "productivity"
+    }
+  ]
+}
