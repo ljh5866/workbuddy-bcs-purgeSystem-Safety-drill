@@ -1,0 +1,20 @@
+{
+  "name": "workbuddy-secops-guardrails",
+  "version": "1.0.0",
+  "description": "WorkBuddy 安全运营规范插件：常驻输出基线、授权演练手册、脱敏输出规范。",
+  "agentName": "workbuddy-secops-guardrails",
+  "author": {
+    "name": "ljh5866"
+  },
+  "repository": "https://github.com/ljh5866/workbuddy-bcs-purgeSystem-Safety-drill",
+  "license": "Apache-2.0",
+  "keywords": [
+    "workbuddy",
+    "security",
+    "compliance",
+    "rules",
+    "skill"
+  ],
+  "rules": "rules",
+  "skills": "skills"
+}

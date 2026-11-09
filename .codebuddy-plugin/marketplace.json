@@ -3,8 +3,26 @@
   "owner": {
     "name": "ljh5866"
   },
-  "description": "WorkBuddy 插件市场：演练插件（输出规范 + 演练手册 + 交付手册）。",
+  "description": "WorkBuddy 插件市场：安全运营规范与演练。",
   "plugins": [
+    {
+      "name": "workbuddy-secops-guardrails",
+      "source": "./plugins/workbuddy-secops-guardrails",
+      "description": "安全运营输出基线（最小确认、脱敏优先、直出交付、证据优先、等级不降级）+ 授权演练手册 + 脱敏输出规范。",
+      "version": "1.0.0",
+      "author": {
+        "name": "ljh5866"
+      },
+      "license": "Apache-2.0",
+      "keywords": [
+        "workbuddy",
+        "security",
+        "compliance",
+        "rules",
+        "skill"
+      ],
+      "category": "security"
+    },
     {
       "name": "workbuddy-bcs-purgeSystem-Safety-drill",
       "source": "./plugins/workbuddy-bcs-purgeSystem-Safety-drill",
