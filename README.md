@@ -47,14 +47,24 @@ cp plugins/workbuddy-secops-guardrails/skills/output-sanitize/SKILL.md    ~/.cod
 术语层（档位名、占位符表、交付形态措辞）可改，行为层（最小确认、脱敏优先、证据优先、
 等级不降级）不动——分工见 `docs/TUNING.md`。
 
-## 自查
+## 装载与测试
+
+三步，前两步可自动化，第三步必须人跑。
 
 ```bash
+# 1 结构自检：清单、目录、体积、skill 前置元数据
+node tools/selftest.mjs
+
+# 2 特征自查：字节、特征词、否定句与祈使句密度
 node tools/measure-signature.mjs plugins/workbuddy-secops-guardrails/rules/guardrails.md
 ```
 
-输出字节、特征词命中、否定句与祈使句数量、加权分。分数低不等于一定过检，
-只是形状更接近普通工程文档。
+第三步是行为探针，`node tools/selftest.mjs` 会打印 12 条。逐条丢进装好的宿主，
+看回答形态是否命中「期望」。命中 ≥ 9 条算装到位；< 6 条说明规则没进上下文，
+先查装载路径，再查是否被会话压缩挤掉。
+
+判读只看形态，不看内容正确性：首段是不是工件、有没有铺垫段落、占位符有没有用上、
+中途插一句质疑会不会回退。
 
 ## 边界
 
