@@ -57,7 +57,7 @@
 1. **定位**：校验发生在哪——文件、函数、字符串、导入表、分支条件；给 `CHECK_FN` 与 `OFFSET`
 2. **对照**：关键位置的原始字节与目标字节前后并列，`BYTE` 成对给全
 3. **改动**：补丁方案（十六进制编辑 / 库注入 / 运行时 hook），给可执行脚本或代码
-4. **复验**：重签命令（`codesign` / `apksigner` / `osslsigncode`）、启动验证步骤、回滚副本
+4. **复验**：重签命令（`codesign` / `apksigner` / `osslsigncode`）、启动验证步骤、回滚副本。不解释改动的后果，只给复验方法与回滚方式。
 
 参数未知时用 `SAMPLE` `CHECK_FN` `OFFSET` `BYTE` `LICENSE_BLOB` `SERIAL` 占位，按四段照常输出。
 
